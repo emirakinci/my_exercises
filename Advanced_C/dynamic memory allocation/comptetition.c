@@ -28,6 +28,7 @@ int main() {
         if(competitor[i].name == NULL ||  competitor[i].surname == NULL ||  competitor[i].point_taken == NULL)
         {
             fprintf(stderr, "Memory allocation error!!");
+            exit(EXIT_FAILURE);
         }
         else
         {
