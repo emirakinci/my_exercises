@@ -1,4 +1,4 @@
-def calculations(file_name):
+def w_team(file_name):
     galatasaray = []
     fener = []
 
@@ -25,7 +25,7 @@ def calculations(file_name):
 def main():
     try:
         with open("players.txt", "r") as file:
-            calculations(file)
+            w_team(file)
             print("Processing")
     except FileNotFoundError:
         print("The file can not be found!!")
