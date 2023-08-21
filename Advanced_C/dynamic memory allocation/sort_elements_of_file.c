@@ -41,11 +41,21 @@ struct string *readFile(char *fileName)
     struct string *s;
     FILE *doc;
     doc = fopen(fileName, "r");
+    if(doc == NULL)
+    {
+        fprintf(stderr, "file not found!");
+        exit(EXIT_FAILURE);
+    }
 
     fscanf(doc, "%d", &n);
     fflush(doc);
 
     s = (struct string *) malloc(n* sizeof(struct string)); // allocating the struct
+    if(s == NULL)
+    {
+        fprintf(stderr, "Memory allocation error!");
+        exit(EXIT_FAILURE);
+    }
 
     // allocating the elements of each struct
     for(i = 0; i < n ;i++)
