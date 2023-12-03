@@ -92,7 +92,7 @@ Node *readFile(char *fileName) {
         Node *current = head; // better to use like that
         flag = 0;
 
-        while (current != NULL) { // implementation of this loop is forgotten
+        while (current != NULL) {
             if (checkWords(current->word, buff) == 1) {
                 current->frequency++;
                 flag = 1;
@@ -115,9 +115,9 @@ Node *tailInsert(Node *the_head, char *val)
     if(the_head == NULL)
     {
         Node *head = create();
-        head->word = malloc((strlen(val)+1)*sizeof(char)); // I forgot paranthesis
+        head->word = malloc((strlen(val)+1)*sizeof(char));
         strcpy(head->word, val);
-        head->frequency = 1; // it is better to initalise to 1 
+        head->frequency = 1;
         head->next = NULL;
 
         return head;
@@ -135,5 +135,5 @@ Node *tailInsert(Node *the_head, char *val)
     current->next->frequency = 1;
     current->next->next = NULL;
 
-    return the_head; // I should have returned head!!
+    return the_head;
 }
