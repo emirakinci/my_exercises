@@ -9,6 +9,7 @@ typedef struct node{
 Node *create();
 void buildList(Node **head, int *arr, int N);
 void printList(Node *head);
+void freeList(Node **head);
 int main(void){
     Node *head;
     int buffer[] = {1, 3, 5, 7 ,9};
@@ -16,6 +17,7 @@ int main(void){
 
     buildList(&head, buffer, sz);
     printList(head);
+    freeList(&head);
 }
 Node *create()
 {
@@ -56,4 +58,14 @@ void printList(Node *head)
     }
     printf("%d\n", head->key);
     printList(head->next);
+}
+void freeList(Node **head)
+{
+    Node *tmp;
+    while(*head != NULL)
+    {
+        tmp = *head;
+        *head = (*head)->next;
+        free(tmp);
+    }
 }
