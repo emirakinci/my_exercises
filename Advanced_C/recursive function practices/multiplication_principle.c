@@ -5,7 +5,7 @@ typedef struct menu{
     int num_choices;
     char *choices;
 }Menus;
-
+// the program finds the possible outcomes of a given problem
 int mult_princ(Menus *val, char *sol, int n, int count, int pos);
 int main(void){
     int i, count = 0, pos = 0, result;
