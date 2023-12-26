@@ -4,8 +4,9 @@ void max(int arr[], int l, int r, int *max_var, int *min_var);
 int main(void)
 {
     int v[] ={5, 2, 7, 1};
+    int sz = sizeof(v)/sizeof(int);
     int max_var = v[0], min_var = v[0];
-    max(v, 0, 3, &max_var, &min_var);
+    max(v, 0, sz-1, &max_var, &min_var);
     printf("\nmax: %d\nmin: %d", max_var, min_var);
     return 0;
 }
