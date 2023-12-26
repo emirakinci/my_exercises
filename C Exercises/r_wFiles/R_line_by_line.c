@@ -6,7 +6,12 @@ int main(void){
     char lines[MAX_CHAR+1];
 
     doc = fopen(fileName, "r");
-
+    
+    if(doc == NULL)
+    {
+        fprintf(stderr, "File not found!");
+    }
+    
     while((fgets(lines, MAX_CHAR, doc)) != NULL)
     {
         printf("%s", lines);
