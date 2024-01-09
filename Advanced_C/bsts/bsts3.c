@@ -12,7 +12,6 @@ Node *create(int val);
 Node *insertTree(int value, Node *root);
 Node *min_node(Node *root);
 Node *max_node(Node *root);
-void inorder_print(Node *root);
 
 int main(void)
 {
@@ -89,14 +88,4 @@ Node *max_node(Node *root)
     }
     return min_node(root->r);
 
-}
-void inorder_print(Node *root)
-{
-    if(root == NULL)
-    {
-        return ;
-    }
-    inorder_print(root->l);
-    printf("%d ", root->key);
-    inorder_print(root->r);
 }
