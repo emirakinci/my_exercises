@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+
+    FILE *doc;
+    char input;
+    doc = fopen("fileName.txt", "w");
+
+    if(doc == NULL)
+    {
+        fprintf(stderr, "FILE NOT FOUND!");
+        exit(EXIT_FAILURE);
+    }
+    else
+    {
+        printf("type a char:\n");
+        scanf("%c", &input);
+
+        fputc(input, doc);
+    }
+
+    fclose(doc);
+    return 0;
+}

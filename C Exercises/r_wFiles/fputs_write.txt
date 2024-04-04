@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *doc;
+    char name[] = "EMIR";
+
+    doc = fopen("fileName.txt", "w");
+    fputs(name, doc);
+    //fputs("Heyyoo", doc);
+    fclose(doc);
+    return 0;
+}
